@@ -7,6 +7,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 const ProfileScreen = () => {
   const { id } = useParams();
   const [page, setPage] = useState(1);
+  const navigate = useNavigate();
 
   const { isLoading, isError, error, data: profileData } = useQuery(['profile', id], () => getActor(id));
 
@@ -16,6 +17,9 @@ const ProfileScreen = () => {
   console.log(movieList);
 
   // console.log(movieList?.data?.results);
+  const handleClick = (id) => {
+    navigate(`/movies/${id}`);
+  };
   return (
     <div className='min-h-screen bg-gray-100 '>
       <div className='p-10 h-100 '>
@@ -33,7 +37,7 @@ const ProfileScreen = () => {
             <div className='justify-start'>
               <h1 className='text-4xl font-light  '>{profileData?.data?.name}</h1>
               <h2 className='mt-3'>{profileData?.data?.birthday.split('-').join('.')}</h2>
-              <p className='mt-3'>{profileData?.data?.biography || 'No Biography'}</p>
+              <p className='mt-3'>{profileData?.data?.biography || 'Loading ...'}</p>
             </div>
           </div>
         </div>
@@ -50,8 +54,8 @@ const ProfileScreen = () => {
               <img
                 className='object-top  rounded-lg z-10    hover:cursor-pointer hover:scale-90  transition ease-in-out duration-500'
                 src={`${base_url}${md.poster_path}`}
-                alt='terro'
-                // onClick={() => handleClick(md.id)}
+                alt='no img'
+                onClick={() => handleClick(md.id)}
               />
               <p className='text-black absolute top-[11rem] text-sm pt-2'>{md.title}</p>
             </div>

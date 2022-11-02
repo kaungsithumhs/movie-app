@@ -49,6 +49,10 @@ const getMovieByActor = async ({ id, page }) => {
   const response = await instance.get(`discover/movie?with_cast=${id}&page=${page}&api_key=${API_KEY}`);
   return response;
 };
+const getMovies = async (movie_id) => {
+  const response = await instance.get(`/movie/${movie_id}/videos?api_key=${API_KEY}&language=en-US`);
+  return response;
+};
 
 export {
   getBannerData,
@@ -61,4 +65,5 @@ export {
   getMovieDetail,
   getActor,
   getMovieByActor,
+  getMovies,
 };

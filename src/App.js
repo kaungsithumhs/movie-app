@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { useStateContext } from './context/context';
 import { Routes, Route } from 'react-router-dom';
-
+import BackDrop from './pages/BackDropTest';
 // pages
 import { HomeScreen, ActorScreen, MovieInformationScreen, ProfileScreen } from './pages';
 
@@ -35,6 +35,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<HomeScreen />} />
         <Route path='/movies/:id' element={<MovieInformationScreen />} />
+        {/*  */}
         <Route path='/actors/:id' element={<ActorScreen />} />
         <Route path='/profile/:id' element={<ProfileScreen />} />
       </Routes>

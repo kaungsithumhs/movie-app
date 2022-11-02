@@ -4,9 +4,11 @@ import { getBannerData } from '../utils/tmdbApi';
 import { data } from 'autoprefixer';
 import { instance, requests, base_url } from '../utils/tmdbApi';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 const Banner = (props) => {
   // const [movieData, setMovieData] = useState(props.movieDataProps);
   const [moviesF, setMoviesF] = useState([]);
+  const navigate = useNavigate();
   useEffect(() => {
     async function fetchData() {
       const request = await instance.get(requests.fetchBanner);
