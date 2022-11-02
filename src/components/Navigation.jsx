@@ -1,14 +1,12 @@
 import React from 'react';
 import { BiMoviePlay } from 'react-icons/bi';
-import { useNavigate } from 'react-router-dom';
 
 const Navigation = () => {
-  const navigate = useNavigate();
   return (
-    <nav className='h-16 text-white capitalize shadow-md  min-w-full'>
+    <nav className='h-16 text-white bg-gray-900 capitalize shadow-md  min-w-full'>
       <div className='flex justify-start'>
         <div className='relative flex items-center h-full mb-5'>
-          <h1 className='block w-[40%] ml-10' onClick={navigate('/')}>
+          <h1 className='block w-[40%] ml-10'>
             <BiMoviePlay className=' w-12 h-16 text-amber-500 cursor-pointer' />
           </h1>
           <input

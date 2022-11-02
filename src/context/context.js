@@ -1,18 +1,13 @@
-import React, { useContext, createContext, useState } from "react";
+import React, { useContext, createContext, useState } from 'react';
 
 const StateContext = createContext();
 
-const initialState = {
-  user: "jhon",
-};
-
 export const ContextProvider = ({ children }) => {
-  const [user, setUser] = useState(initialState.user);
+  const [page, setPage] = useState(1);
+  const [searchQuery, setSearchQuery] = useState('');
 
   return (
-    <StateContext.Provider value={{ user, setUser, initialState }}>
-      {children}
-    </StateContext.Provider>
+    <StateContext.Provider value={{ searchQuery, setSearchQuery, page, setPage }}>{children}</StateContext.Provider>
   );
 };
 

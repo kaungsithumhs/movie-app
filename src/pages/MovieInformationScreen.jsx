@@ -56,7 +56,12 @@ const TestDetail = () => {
               onClick={backdropHandler}
             >
               <div className='p-6 space-y-6 relative max-w-2xl mx-auto mt-20'>
-                <ReactPlayer url={`https://www.youtube.com/embed/${trailerKey}`} controls volume playing={backdrop} />
+                <ReactPlayer
+                  url={`https://www.youtube.com/embed/${trailerKey}`}
+                  controls
+                  volume={true}
+                  playing={backdrop}
+                />
               </div>
             </div>
           </div>

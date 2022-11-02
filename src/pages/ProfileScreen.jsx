@@ -24,9 +24,9 @@ const ProfileScreen = () => {
     <div className='min-h-screen bg-gray-100 '>
       <div className='p-10 h-100 '>
         <div className='bg-white shadow-md border-gray-100  border sm:rounded-3xl p-3 flex justify-around h-full'>
-          <div className=' w-[25%]'>
+          <div className=' max-w-[25%]'>
             <img
-              className='rounded-2xl shadow-xl mx-auto h-full  object-cover bg-center object-center'
+              className='rounded-2xl shadow-xl mx-auto min-h-auto  object-cover bg-center object-center'
               src={`${base_url}${profileData?.data?.profile_path}`}
               alt=''
               // onClick={() => goToActor(detail?.)}
