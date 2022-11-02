@@ -42,12 +42,7 @@ const ProfileScreen = () => {
           </div>
         </div>
       </div>
-      <div
-        className='flex flex-auto flex-wrap items-center justify-around '
-        // style={{
-        //   background: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(10,10,54,1) 43%, rgba(10,10,54,1) 51%)',
-        // }}
-      >
+      <div className='flex flex-auto flex-wrap items-center justify-around '>
         {movieList?.data.results.slice(0, 16).map((md) => (
           <div key={md.id} className='pb-24  mb-24'>
             <div className='px-3 pb-3 h-24 w-36 relative  '>

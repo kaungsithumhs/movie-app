@@ -1,4 +1,4 @@
-import { Banner, Documentaries, TopRated, Trending } from '../components';
+import { Banner, TopRated } from '../components';
 import Navigation from '../components/Navigation';
 const HomeScreen = () => {
   return (
@@ -8,12 +8,6 @@ const HomeScreen = () => {
       </div>
       <Banner />
       <TopRated />
-
-
-      {/* <TopRated /> */}
-      {/* <TopRated />
-        <Trending />
-        <Documentaries /> */}
     </>
   );
 };

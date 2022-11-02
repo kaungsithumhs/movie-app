@@ -63,7 +63,7 @@ const TestDetail = () => {
 
           <div className='flex flex-col w-[60%] bg-gray-50 p-3 rounded-md space-y-5'>
             <div className='flex items-start'>
-              <h2 className='text-3xl font-bold'>{detail?.data?.title}</h2>
+              <h2 className='text-2xl font-bold font-sans '>{detail?.data?.title}</h2>
 
               <div className='bg-yellow-400 font-bold rounded-xl p-2 mx-auto'>
                 {Math.ceil(detail?.data?.vote_average).toFixed(1)}
@@ -73,7 +73,7 @@ const TestDetail = () => {
             <div className='flex text-lg items-center justify-between text-gray-800'>
               <p>{detail?.data?.release_date.split('-').slice(0, 1)}</p>
               <button
-                className='bg-yellow-500 text-white p-1 m-1 rounded-md  text-sm hover:bg-yellow-700 hover:duration-200 hover:transition-all'
+                className='bg-yellow-500 text-white p-2 mr-6  rounded-md  text-sm hover:bg-yellow-700 hover:duration-200 hover:transition-all'
                 data-modal-toggle='defaultModal'
                 onClick={backdropHandler}
               >
