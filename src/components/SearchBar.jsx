@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { FiSearch } from 'react-icons/fi';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { BiMoviePlay } from 'react-icons/bi';
 const SearchBar = ({ onSubmit }) => {
@@ -8,6 +7,7 @@ const SearchBar = ({ onSubmit }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (searchTerm.length === 0) return <p></p>;
     navigate(`/search/${searchTerm}`);
     setSearchTerm('');
   };

@@ -1,6 +1,7 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { useStateContext } from './context/context';
 import { Routes, Route } from 'react-router-dom';
+
 // pages
 import { HomeScreen, ActorScreen, MovieInformationScreen, ProfileScreen } from './pages';
 import SearchBar from './components/SearchBar';
