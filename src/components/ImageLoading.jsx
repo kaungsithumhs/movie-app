@@ -1,10 +1,12 @@
 import React from 'react';
 import { ImageLoader } from 'render-img';
 import smImg from '../bg.jpg';
+import Lazy from './Lazy';
+
 const ImageLoading = ({ baseUrl, poster }) => {
   return (
     <ImageLoader
-      placeHolderSrc={smImg} // low quality image to show before actual image load
+      loader={ <Lazy />}
       src={`${baseUrl}${poster}`}
       alt='...'
       blurOverLay='#fdf2f2'
