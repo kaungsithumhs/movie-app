@@ -13,19 +13,15 @@ const SearchBar = ({ onSubmit }) => {
   };
   return (
     <nav className='h-16 text-white bg-gray-900 capitalize shadow-md  min-w-full'>
-      <div className='flex justify-start'>
-        <div className='relative flex items-center h-full mb-5'>
-          <NavLink className='block w-[40%] ml-10' to='/'>
+      <div className='flex items-center h-full'>
+          <NavLink className=' inline-block mr-10 ml-10' to='/'>
             <BiMoviePlay className=' w-12 h-16 text-amber-500 cursor-pointer' />
           </NavLink>
-          <form onSubmit={handleSubmit} autoComplete='off' className='p-2 text-gray-300 focus-within:text-gray-600'>
-            <label htmlFor='search-field' className='sr-only'>
-              Search all files
-            </label>
+          <form onSubmit={handleSubmit} autoComplete='off' className=' text-gray-300 focus-within:text-gray-600'>
             <div className='flex flex-row justify-start items-center'>
               <input
                 type='search'
-                className=' relative flex-1  block w-60 ml-20 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none'
+                className=' p-2 text-base font-normal text-gray-700 rounded transition ease-in-out m-0 focus:text-gray-700 focus:border focus:bg-white focus:border-blue-600 focus:outline-none'
                 placeholder='Search'
                 aria-label='Search'
                 aria-describedby='button-addon2'
@@ -34,7 +30,6 @@ const SearchBar = ({ onSubmit }) => {
               />
             </div>
           </form>
-        </div>
       </div>
     </nav>
   );

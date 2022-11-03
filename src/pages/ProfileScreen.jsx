@@ -78,6 +78,7 @@ const ProfileScreen = () => {
               />
               <p className="text-black absolute top-[11rem] text-sm pt-2">
                 {md.title}
+                <p>commit</p>
               </p>
             </div>
           </div>
