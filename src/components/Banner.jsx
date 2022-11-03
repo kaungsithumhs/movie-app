@@ -24,9 +24,9 @@ const Banner = (props) => {
           src={`${base_url}${moviesF.poster_path}`}
           alt={moviesF.name}
         />
-        <div className="absolute bottom-5 px-3  ml-2   ">
-          <p className="text-2xl mb-3">{moviesF.name}</p>
-          <p className="w-96 text-sm">{moviesF.overview}</p>
+        <div className="absolute bottom-5 px-3 w-screen  ml-2   ">
+          <p className=" sm:text-2xl text-lg mb-3 text-left">{moviesF.name}</p>
+          <p className="sm:w-[500px] text-sm text-left">{moviesF.overview}</p>
         </div>
       </div>
     </section>
