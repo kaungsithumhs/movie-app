@@ -41,9 +41,9 @@ const ProfileScreen = () => {
           </div>
         </div>
       </div>
-      <div className='flex flex-auto flex-wrap items-center justify-around '>
+      <div className='flex flex-auto flex-wrap items-center '>
         {movieList?.data.results.slice(0, 16).map((md) => (
-          <div key={md.id} className='pb-24  mb-24'>
+          <div key={md.id} className='pb-24  mb-20'>
             <div className='px-3 pb-3 h-24 w-36 relative  '>
               <img
                 className='object-top  rounded-lg z-10    hover:cursor-pointer hover:scale-90  transition ease-in-out duration-500'
