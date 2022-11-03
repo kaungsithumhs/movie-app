@@ -10,7 +10,7 @@ const ProfileScreen = () => {
 
   const navigate = useNavigate();
 
-  const { isLoading, isError, error, data: profileData } = useQuery(['profile', id], () => getActor(id));
+  const { data: profileData } = useQuery(['profile', id], () => getActor(id));
 
   const { data: movieList } = useQuery(['list', { id, page }], () => getMovieByActor({ id, page }));
 

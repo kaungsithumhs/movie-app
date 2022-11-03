@@ -14,7 +14,7 @@ const Banner = (props) => {
   }, []);
 
   return (
-    <section className=' text-white'>
+    <section className=' text-white '>
       <div className='hero-image  relative'>
         <img
           className=' h-96  min-w-full object-cover bg-no-repeat object-center-bottom opacity-[0.9]    '

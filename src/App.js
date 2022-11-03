@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import InitialLoading from './components/InitialLoading';
 // pages
-import { HomeScreen, MovieInformationScreen, ActorScreen, ProfileScreen } from './pages';
+import { HomeScreen, MovieInformationScreen, ProfileScreen } from './pages';
 import SearchBar from './components/SearchBar';
 import SearchFeed from './pages/SearchFeed';
 const App = () => {

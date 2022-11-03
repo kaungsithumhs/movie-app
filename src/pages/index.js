@@ -1,6 +1,6 @@
-import HomeScreen from "./HomeScreen";
-import ActorScreen from "./ActorScreen";
-import MovieInformationScreen from "./MovieInformationScreen";
-import ProfileScreen from "./ProfileScreen";
+import HomeScreen from './HomeScreen';
 
-export { HomeScreen, ActorScreen, MovieInformationScreen, ProfileScreen };
+import MovieInformationScreen from './MovieInformationScreen';
+import ProfileScreen from './ProfileScreen';
+
+export { HomeScreen, MovieInformationScreen, ProfileScreen };
