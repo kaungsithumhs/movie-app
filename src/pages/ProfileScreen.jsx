@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { getActor, getMovieByActor, base_url } from '../utils/tmdbApi';
 
@@ -6,12 +6,13 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 const ProfileScreen = () => {
   const { id } = useParams();
+  const [page, setPage] = useState(1);
 
   const navigate = useNavigate();
 
   const { isLoading, isError, error, data: profileData } = useQuery(['profile', id], () => getActor(id));
 
-  const { data: movieList } = useQuery(['list', id], () => getMovieByActor(id));
+  const { data: movieList } = useQuery(['list', { id, page }], () => getMovieByActor({ id, page }));
 
   console.log(profileData?.data?.name);
   console.log(movieList);

@@ -6,15 +6,18 @@ import { Navigation, EffectFade } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
-const MoviesCarousel = ({ movieData, error, loading, title }) => {
+import { ImageLoader } from 'render-img';
+import smImg from '../bg.jpg';
+import ImageLoading from './ImageLoading';
+const MoviesCarousel = ({ movieData, error, isError, loading, title }) => {
   const navigate = useNavigate();
-  if (loading) return <p>loading...</p>;
-  if (error) return console.log(error.message);
+  // if (loading) return <p className='h-full w-full absolute inset-0'>Loading...</p>;
+  // if (error) return console.log(error.message);
+
   const handleClick = (id) => {
     navigate(`/movies/${id}`);
   };
   console.log(movieData);
-
   return (
     <div
       className='flex flex-1 flex-wrap items-center'
@@ -27,13 +30,17 @@ const MoviesCarousel = ({ movieData, error, loading, title }) => {
         {movieData?.data.results.map((md) => (
           <SwiperSlide key={md.id}>
             <div className='pb-32 mb-14 px-3'>
-              <div className='px-2 pb-3 h-32 w-48 relative  '>
-                <img
+              <div
+                className='px-2 pb-3 h-32 w-48 relative object-top  rounded-lg z-10  my-5  hover:cursor-pointer hover:scale-90  transition ease-in-out duration-500'
+                onClick={() => handleClick(md.id)}
+              >
+                <ImageLoading baseUrl={base_url} poster={md.poster_path} />
+                {/* <img
                   className='object-top  rounded-lg z-10  my-5  hover:cursor-pointer hover:scale-90  transition ease-in-out duration-500 '
                   src={`${base_url}${md.poster_path}`}
                   alt='no img'
                   onClick={() => handleClick(md.id)}
-                />
+                /> */}
                 <p className='  text-white absolute top-[16rem] pb-4 pt-2  '>{md.title}</p>
               </div>
             </div>

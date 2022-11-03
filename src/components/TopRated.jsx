@@ -1,18 +1,21 @@
 import React from 'react';
-import MoviesCarousel from './MoviesCarousel';
-import { getDocumentary, getTopRated, getTrending } from '../utils/tmdbApi';
 import { useQuery } from '@tanstack/react-query';
+import { getTopRated } from '../utils/tmdbApi';
+import MoviesCarousel from './MoviesCarousel';
 
 const TopRated = () => {
   const { isLoading, isError, error, data: topRatedMovie } = useQuery(['topRated'], getTopRated);
-  const { data: trendingMovie } = useQuery(['trending'], getTrending);
-  const { data: docMovie } = useQuery(['documentary'], getDocumentary);
+  if (isError) return console.log(error.message);
 
   return (
     <>
-      <MoviesCarousel movieData={topRatedMovie} loading={isLoading} error={isError} title='Top Rating' />
-      <MoviesCarousel movieData={trendingMovie} loading={isLoading} error={isError} title='trending' />
-      <MoviesCarousel movieData={docMovie} loading={isLoading} error={isError} title='Documentary' />
+      <MoviesCarousel
+        movieData={topRatedMovie}
+        loading={isLoading}
+        isError={isError}
+        error={error}
+        title={'Top Rating'}
+      />
     </>
   );
 };

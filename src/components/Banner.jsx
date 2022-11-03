@@ -1,14 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { instance, requests, base_url } from '../utils/tmdbApi';
 const Banner = (props) => {
   const [moviesF, setMoviesF] = useState([]);
 
   useEffect(() => {
-    async function fetchData() {
+    const fetchData = async () => {
       const request = await instance.get(requests.fetchBanner);
-      setMoviesF(request.data.results[Math.floor(Math.random() * request.data.results.length - 1)]);
+      let randomMovie = request.data.results[Math.floor(Math.random() * request.data.results.length - 1)];
+      setMoviesF(randomMovie);
       return request;
-    }
+    };
     fetchData();
   }, []);
 
