@@ -47,7 +47,7 @@ const TestDetail = () => {
       key={detail?.data?.id}
     >
       <div className="py-3 sm:max-w-4xl sm:mx-auto">
-        <div className="bg-white shadow-lg border-gray-100 min-h-[500px] border sm:rounded-3xl flex justify-between">
+        <div className="bg-white relative shadow-lg border-gray-100 min-h-[500px] border sm:rounded-3xl flex justify-between">
           <div className=" overflow-visible w-[45%] p-1 bg-center">
             <img
               className="rounded-l-2xl shadow-lg w-full h-full object-cover bg-center"
@@ -100,7 +100,7 @@ const TestDetail = () => {
             </p>
             <button
               onClick={() => navigate(-1)}
-              className="absolute bottom-[50px] right-[200px] text-blue-500 hover:text-red-500 cursor-pointer"
+              className="absolute bottom-[50px] right-[100px] text-blue-500 hover:text-red-500 cursor-pointer"
             >
               &laquo; Go Back
             </button>
