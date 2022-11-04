@@ -53,9 +53,9 @@ const MoviesCarousel = ({ movieData, error, isError, loading, title }) => {
       >
         {movieData?.data.results.map((md) => (
           <SwiperSlide key={md.id}>
-            <div className='pb-32 mb-14 px-3'>
+            <div className='pb-32 mb-14 px-3 flex justify-center sm:inline-block'>
               <div
-                className='px-2 pb-3 h-32 w-48 relative object-top  rounded-lg z-10  my-5  hover:cursor-pointer hover:scale-90  transition ease-in-out duration-500 flex flex-wrap'
+                className='px-2 pb-3 h-32  w-64 sm:w-48 relative object-top  rounded-lg z-10  my-5  hover:cursor-pointer hover:scale-90  transition ease-in-out duration-500 flex flex-wrap'
                 onClick={() => handleClick(md.id)}
               >
                 <ImageLoading baseUrl={base_url} poster={md.poster_path} />
